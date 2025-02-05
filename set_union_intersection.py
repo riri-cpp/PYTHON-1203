@@ -1,0 +1,5 @@
+set1 = set(map(int, input("Enter elements of the first set: ").split()))
+set2 = set(map(int, input("Enter elements of the second set: ").split()))
+print()
+print("Union of the two sets:", set1.union(set2))
+print("Intersection of the two sets:", set1.intersection(set2))
