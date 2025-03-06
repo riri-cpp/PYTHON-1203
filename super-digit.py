@@ -1,10 +1,14 @@
-def is_super_digit(n):
-    if n < 10: #base case, if a number is a single digit number, then the super digit is the number itself
+def super_digit(n):
+    if n < 10:
         return n
-    digit_sum = sum(int(digit) for digit in str(n)) #iterate through the number and get the sum of all digits
-    return is_super_digit(digit_sum) #pass the number through the function until it reaches base case
+    digit_sum = sum(int(digit) for digit in str(n))
+    return super_digit(digit_sum)
 
-num = int(input("Enter a number: "))
+num = input("Enter a number: ")
 
-result = is_super_digit(num)
-print(f"The super digit is: {result}")
+if num.isdigit() and len(num) <= 18:
+    num = int(num)
+    result = super_digit(num)
+    print(f"{result} is the super digit.")
+else:
+    print("Invalid input.")
